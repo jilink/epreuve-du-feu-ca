@@ -29,7 +29,7 @@ const InputOutput = ({
     <Box>
       <Input onChange={onChange} value={input} placeholder={placeholder} />
       <Button onClick={onExecute} colorScheme="blue">Execute</Button>
-      <Text>{output}</Text>
+      <Text style={{whiteSpace: 'pre-line'}}>{output}</Text>
     </Box>
   );
 };
