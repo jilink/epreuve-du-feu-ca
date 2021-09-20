@@ -19,7 +19,6 @@ const InputOutput = ({
 
   const onChange = (e) => {
     setInput(e.target.value);
-    console.log(callback);
   };
 
   const onExecute = (e) => {
