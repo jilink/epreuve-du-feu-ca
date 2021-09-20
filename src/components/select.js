@@ -1,9 +1,11 @@
 import React from "react";
 import { Select as Choose } from "@chakra-ui/react";
 import escalier from "../epreuves/escalier";
+import majuscule from "../epreuves/majuscule";
 
 const functionDic = {
-  'escalier': escalier
+  'escalier': escalier,
+  'majuscule': majuscule
 }
 
 const Select = ({ setCallback, setInput }) => {
@@ -16,7 +18,7 @@ const Select = ({ setCallback, setInput }) => {
     <div>
       <Choose onChange={onChange} placeholder="Choisissez une épreuve">
         <option value='escalier'>Escalier</option>
-        <option>Majuscule</option>
+        <option value='majuscule'>Majuscule</option>
         <option>Factoriel en récursif</option>
         <option>Tri</option>
         <option>Rectangle</option>
