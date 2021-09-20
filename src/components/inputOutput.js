@@ -14,22 +14,27 @@ const InputOutput = ({
   const [input, setInput] = useState(value);
 
   useEffect(() => {
-    setInput(value)
-  }, [value])
+    setInput(value);
+  }, [value]);
 
   const onChange = (e) => {
-    setInput(e.target.value)
-    console.log(callback)
-  }
+    setInput(e.target.value);
+    console.log(callback);
+  };
 
   const onExecute = (e) => {
-    setOutput(callback(input))
-  }
+    e.preventDefault();
+    setOutput(callback(input));
+  };
   return (
     <Box>
-      <Input onChange={onChange} value={input} placeholder={placeholder} />
-      <Button onClick={onExecute} colorScheme="blue">Execute</Button>
-      <Text style={{whiteSpace: 'pre-line'}}>{output}</Text>
+      <form onSubmit={onExecute}>
+        <Input onChange={onChange} value={input} placeholder={placeholder} />
+        <Button type='submit' colorScheme="blue">
+          Execute
+        </Button>
+      </form>
+      <Text style={{ whiteSpace: "pre-line" }}>{output}</Text>
     </Box>
   );
 };
