@@ -1,6 +1,6 @@
 import { Button } from "@chakra-ui/button";
 import { Input } from "@chakra-ui/input";
-import { Box, Text } from "@chakra-ui/layout";
+import { Box, Flex, Text } from "@chakra-ui/layout";
 import React, { useEffect, useState } from "react";
 
 const InputOutput = ({
@@ -27,13 +27,17 @@ const InputOutput = ({
   };
   return (
     <Box>
-      <form onSubmit={onExecute}>
-        <Input onChange={onChange} value={input} placeholder={placeholder} />
-        <Button type='submit' colorScheme="blue">
-          Execute
-        </Button>
-      </form>
-      <Text style={{ whiteSpace: "pre-line" }}>{output}</Text>
+        <form onSubmit={onExecute}>
+      <Flex m='2'>
+          <Input onChange={onChange} value={input} placeholder={placeholder} mr="2" />
+          <Button type="submit" colorScheme="blue">
+            Execute
+          </Button>
+      </Flex>
+        </form>
+      <Text p='2' m='2' minH='50px' border="1px" style={{ whiteSpace: "pre-line" }}>
+        {output}
+      </Text>
     </Box>
   );
 };
